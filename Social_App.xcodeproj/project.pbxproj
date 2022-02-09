@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		2831940D27B3D8E500FE58F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831940C27B3D8E500FE58F8 /* AppDelegate.swift */; };
 		2831940F27B3D8E500FE58F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831940E27B3D8E500FE58F8 /* SceneDelegate.swift */; };
-		2831941127B3D8E500FE58F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831941027B3D8E500FE58F8 /* ViewController.swift */; };
 		2831941427B3D8E500FE58F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2831941227B3D8E500FE58F8 /* Main.storyboard */; };
 		2831941727B3D8E500FE58F8 /* Social_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2831941527B3D8E500FE58F8 /* Social_App.xcdatamodeld */; };
 		2831941927B3D8E600FE58F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2831941827B3D8E600FE58F8 /* Assets.xcassets */; };
 		2831941C27B3D8E600FE58F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2831941A27B3D8E600FE58F8 /* LaunchScreen.storyboard */; };
+		2831943027B3DDB200FE58F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831942F27B3DDB200FE58F8 /* HomeViewController.swift */; };
+		2831943A27B3DF1700FE58F8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831943927B3DF1700FE58F8 /* CameraViewController.swift */; };
+		2831943D27B3DF2500FE58F8 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831943C27B3DF2500FE58F8 /* ExploreViewController.swift */; };
+		2831944027B3DF2E00FE58F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831943F27B3DF2E00FE58F8 /* ProfileViewController.swift */; };
+		2831944327B3DF3D00FE58F8 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831944227B3DF3D00FE58F8 /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2831940927B3D8E500FE58F8 /* Social_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2831940C27B3D8E500FE58F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2831940E27B3D8E500FE58F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2831941027B3D8E500FE58F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2831941327B3D8E500FE58F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2831941627B3D8E500FE58F8 /* Social_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Social_App.xcdatamodel; sourceTree = "<group>"; };
 		2831941827B3D8E600FE58F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2831941B27B3D8E600FE58F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2831941D27B3D8E600FE58F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2831942F27B3DDB200FE58F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2831943927B3DF1700FE58F8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		2831943C27B3DF2500FE58F8 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		2831943F27B3DF2E00FE58F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2831944227B3DF3D00FE58F8 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,60 @@
 		2831940B27B3D8E500FE58F8 /* Social_App */ = {
 			isa = PBXGroup;
 			children = (
-				2831940C27B3D8E500FE58F8 /* AppDelegate.swift */,
-				2831940E27B3D8E500FE58F8 /* SceneDelegate.swift */,
-				2831941027B3D8E500FE58F8 /* ViewController.swift */,
-				2831941227B3D8E500FE58F8 /* Main.storyboard */,
-				2831941827B3D8E600FE58F8 /* Assets.xcassets */,
-				2831941A27B3D8E600FE58F8 /* LaunchScreen.storyboard */,
+				2831942D27B3DC1800FE58F8 /* Resources */,
+				2831942B27B3DBEA00FE58F8 /* Views */,
+				2831942A27B3DBE300FE58F8 /* Storyboard */,
+				2831942927B3DBDC00FE58F8 /* Controllers */,
+				2831942827B3DBB500FE58F8 /* Models */,
 				2831941D27B3D8E600FE58F8 /* Info.plist */,
 				2831941527B3D8E500FE58F8 /* Social_App.xcdatamodeld */,
 			);
 			path = Social_App;
+			sourceTree = "<group>";
+		};
+		2831942827B3DBB500FE58F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2831942927B3DBDC00FE58F8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2831942F27B3DDB200FE58F8 /* HomeViewController.swift */,
+				2831943927B3DF1700FE58F8 /* CameraViewController.swift */,
+				2831943C27B3DF2500FE58F8 /* ExploreViewController.swift */,
+				2831943F27B3DF2E00FE58F8 /* ProfileViewController.swift */,
+				2831944227B3DF3D00FE58F8 /* NotificationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2831942A27B3DBE300FE58F8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2831941A27B3D8E600FE58F8 /* LaunchScreen.storyboard */,
+				2831941227B3D8E500FE58F8 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		2831942B27B3DBEA00FE58F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2831941827B3D8E600FE58F8 /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2831942D27B3DC1800FE58F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2831940C27B3D8E500FE58F8 /* AppDelegate.swift */,
+				2831940E27B3D8E500FE58F8 /* SceneDelegate.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,10 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2831941127B3D8E500FE58F8 /* ViewController.swift in Sources */,
 				2831940D27B3D8E500FE58F8 /* AppDelegate.swift in Sources */,
+				2831943A27B3DF1700FE58F8 /* CameraViewController.swift in Sources */,
+				2831944327B3DF3D00FE58F8 /* NotificationViewController.swift in Sources */,
+				2831943D27B3DF2500FE58F8 /* ExploreViewController.swift in Sources */,
 				2831941727B3D8E500FE58F8 /* Social_App.xcdatamodeld in Sources */,
+				2831944027B3DF2E00FE58F8 /* ProfileViewController.swift in Sources */,
 				2831940F27B3D8E500FE58F8 /* SceneDelegate.swift in Sources */,
+				2831943027B3DDB200FE58F8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +346,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 38B2STTTMY;
 				INFOPLIST_FILE = Social_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +356,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eslam.Social-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,7 +367,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 38B2STTTMY;
 				INFOPLIST_FILE = Social_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -316,6 +377,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eslam.Social-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
