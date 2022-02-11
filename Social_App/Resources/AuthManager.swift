@@ -15,8 +15,18 @@ public class AuthManager {
         
     }
     
-    public func Login (email: String, password: String){
+    public func Login (email: String, password: String, completion: @escaping ((Bool) -> Void)){
         
-    }
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            guard authResult != nil , error == nil else {
+                // user not signed in
+                completion(false)
+                return
+            }
+            // user signed in successfully
+            completion(true)
+        }
+        
+    }//login func
     
-}
+}//class
