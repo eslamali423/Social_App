@@ -13,17 +13,18 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setItem()
+    }
+ 
+    
+    func  setItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done , target: self, action: #selector(goToSettingsVC))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func goToSettingsVC() {
+        let settingsVC = storyboard?.instantiateViewController(identifier: "settingVCID") as! SettingsViewController
+        
+        present(settingsVC, animated: true, completion: nil)
     }
-    */
-
+    
 }
