@@ -23,6 +23,8 @@
 		2864462327B574A500D4C537 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864462227B574A500D4C537 /* RegistrationViewController.swift */; };
 		2864462527B57CC300D4C537 /* ContainerTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864462427B57CC300D4C537 /* ContainerTabBarViewController.swift */; };
 		2864462727B580A000D4C537 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864462627B580A000D4C537 /* AuthManager.swift */; };
+		28907ED827B7E972005D4E6F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28907ED727B7E972005D4E6F /* DatabaseManager.swift */; };
+		28907EDC27B821CF005D4E6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28907EDB27B821CF005D4E6F /* SettingsViewController.swift */; };
 		28C1872927B4326900A2AFA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C1872827B4326900A2AFA9 /* LoginViewController.swift */; };
 		28D4BA1727B4034700F521A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D4BA1627B4034700F521A6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		2864462227B574A500D4C537 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2864462427B57CC300D4C537 /* ContainerTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTabBarViewController.swift; sourceTree = "<group>"; };
 		2864462627B580A000D4C537 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		28907ED727B7E972005D4E6F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		28907EDB27B821CF005D4E6F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		28C1872827B4326900A2AFA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		28D4BA1627B4034700F521A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		401E1D619233F7CB891B1E78 /* Pods-Social_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social_App.release.xcconfig"; path = "Target Support Files/Pods-Social_App/Pods-Social_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				2831943C27B3DF2500FE58F8 /* ExploreViewController.swift */,
 				2831943F27B3DF2E00FE58F8 /* ProfileViewController.swift */,
 				2831944227B3DF3D00FE58F8 /* NotificationViewController.swift */,
+				28907EDB27B821CF005D4E6F /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				2831940C27B3D8E500FE58F8 /* AppDelegate.swift */,
 				2831940E27B3D8E500FE58F8 /* SceneDelegate.swift */,
 				2864462627B580A000D4C537 /* AuthManager.swift */,
+				28907ED727B7E972005D4E6F /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -294,12 +300,14 @@
 			files = (
 				28C1872927B4326900A2AFA9 /* LoginViewController.swift in Sources */,
 				2864462727B580A000D4C537 /* AuthManager.swift in Sources */,
+				28907ED827B7E972005D4E6F /* DatabaseManager.swift in Sources */,
 				2831940D27B3D8E500FE58F8 /* AppDelegate.swift in Sources */,
 				2831943A27B3DF1700FE58F8 /* CameraViewController.swift in Sources */,
 				2831944327B3DF3D00FE58F8 /* NotificationViewController.swift in Sources */,
 				2864462327B574A500D4C537 /* RegistrationViewController.swift in Sources */,
 				2864462527B57CC300D4C537 /* ContainerTabBarViewController.swift in Sources */,
 				2831943D27B3DF2500FE58F8 /* ExploreViewController.swift in Sources */,
+				28907EDC27B821CF005D4E6F /* SettingsViewController.swift in Sources */,
 				2831941727B3D8E500FE58F8 /* Social_App.xcdatamodeld in Sources */,
 				2831944027B3DF2E00FE58F8 /* ProfileViewController.swift in Sources */,
 				2831940F27B3D8E500FE58F8 /* SceneDelegate.swift in Sources */,

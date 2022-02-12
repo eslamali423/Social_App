@@ -42,10 +42,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                 if success {
                     // user signed in
                     print ("you are loged in ")
+                    //to dismiss login view controller and move to home
+                    self.dismiss(animated: false, completion:nil )
+                    
                 }else {
                     //user Not signed in
                     print ("you are NOT loged in ")
-                    let alert = UIAlertController(title: "Login Error", message: "we ware unable to log you in.", preferredStyle: .alert )
+                    let alert = UIAlertController(title: "Login Error", message: "SOMEYHING WRONG YOU'RE NOT LOGED IN.", preferredStyle: .alert )
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: { (action) in
                         print("dismiss pressed")
                     }))
