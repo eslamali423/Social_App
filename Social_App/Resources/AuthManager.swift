@@ -37,11 +37,7 @@ public class AuthManager {
     } //registration func
    
     
-    
-    
-    
-    
-    
+
     
     public func Login (email: String, password: String, completion: @escaping ((Bool) -> Void)){
         
@@ -56,5 +52,25 @@ public class AuthManager {
         }
         
     }//login func
+ 
+    public func signOut (completion : (Bool) -> Void){
+            do{
+                try Auth.auth().signOut()
+                completion(true)
+            }
+            catch {
+            print("Error in sign out")
+                completion(false)
+            }
+ 
+    }
+
+    
+       
+        
+        
+    
+    
+    
     
 }//class

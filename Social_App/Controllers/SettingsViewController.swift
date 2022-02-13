@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
         tabelView.delegate = self
         tabelView.dataSource = self
-       
+        navigationController?.title = "Settings"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,36 +27,31 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text =  "Sign Out"
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let actionAlert = UIAlertController(title: "Sign Out", message: "Sure you want to Sign out? ", preferredStyle: .actionSheet)
+        actionAlert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
             // to sign out
-        do {
-            try FirebaseAuth.Auth.auth().signOut()
-        } catch {
-          print("Error signing out")
-        }
-        // going to Login View Controller
-        let LoginVC = storyboard?.instantiateViewController(identifier: "LoginID") as! LoginViewController
-        LoginVC.modalPresentationStyle =  .fullScreen
-        present(LoginVC, animated: false)
-        // going to the HomeVC not to the settingsVCn when you login again
-        // NOT WORKING :""""DDDDD
-        navigationController?.popToRootViewController(animated: false)
-        tabBarController?.selectedIndex = 0
+            AuthManager.shared.signOut { (success) in
+                if success {
+                    let LoginVC = self.storyboard?.instantiateViewController(identifier: "LoginID") as! LoginViewController
+                    LoginVC.modalPresentationStyle =  .fullScreen
+                    self.present(LoginVC, animated: false)
+                    // going to the HomeVC not to the settingsVCn when you login again
+                    // NOT WORKING :""""DDDDD
+                    self.navigationController?.popToRootViewController(animated: false)
+                    self.tabBarController?.selectedIndex = 0
+                }
+            }
         
-    }
+        }))
+        present(actionAlert, animated: true, completion: nil)
+        }
+        
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
