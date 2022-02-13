@@ -24,6 +24,9 @@
 		2864462527B57CC300D4C537 /* ContainerTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864462427B57CC300D4C537 /* ContainerTabBarViewController.swift */; };
 		2864462727B580A000D4C537 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864462627B580A000D4C537 /* AuthManager.swift */; };
 		2879049C27B87AFD00C312FE /* notificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2879049B27B87AFD00C312FE /* notificationTableViewCell.swift */; };
+		288934AF27B948CB0003F3E0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288934AE27B948CB0003F3E0 /* StorageManager.swift */; };
+		288934B327B94C590003F3E0 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288934B227B94C590003F3E0 /* EditProfileViewController.swift */; };
+		288934B727B984620003F3E0 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288934B627B984620003F3E0 /* ProfileCollectionViewCell.swift */; };
 		28907ED827B7E972005D4E6F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28907ED727B7E972005D4E6F /* DatabaseManager.swift */; };
 		28907EDC27B821CF005D4E6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28907EDB27B821CF005D4E6F /* SettingsViewController.swift */; };
 		28C1872927B4326900A2AFA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C1872827B4326900A2AFA9 /* LoginViewController.swift */; };
@@ -62,6 +65,9 @@
 		2864462427B57CC300D4C537 /* ContainerTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTabBarViewController.swift; sourceTree = "<group>"; };
 		2864462627B580A000D4C537 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		2879049B27B87AFD00C312FE /* notificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationTableViewCell.swift; sourceTree = "<group>"; };
+		288934AE27B948CB0003F3E0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		288934B227B94C590003F3E0 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		288934B627B984620003F3E0 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		28907ED727B7E972005D4E6F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		28907EDB27B821CF005D4E6F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		28C1872827B4326900A2AFA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 				2879049B27B87AFD00C312FE /* notificationTableViewCell.swift */,
 				2831943F27B3DF2E00FE58F8 /* ProfileViewController.swift */,
 				28907EDB27B821CF005D4E6F /* SettingsViewController.swift */,
+				288934B227B94C590003F3E0 /* EditProfileViewController.swift */,
+				288934B627B984620003F3E0 /* ProfileCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				2831940E27B3D8E500FE58F8 /* SceneDelegate.swift */,
 				2864462627B580A000D4C537 /* AuthManager.swift */,
 				28907ED727B7E972005D4E6F /* DatabaseManager.swift */,
+				288934AE27B948CB0003F3E0 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -311,11 +320,14 @@
 				2864462527B57CC300D4C537 /* ContainerTabBarViewController.swift in Sources */,
 				2831943D27B3DF2500FE58F8 /* ExploreViewController.swift in Sources */,
 				2879049C27B87AFD00C312FE /* notificationTableViewCell.swift in Sources */,
+				288934B727B984620003F3E0 /* ProfileCollectionViewCell.swift in Sources */,
+				288934B327B94C590003F3E0 /* EditProfileViewController.swift in Sources */,
 				28907EDC27B821CF005D4E6F /* SettingsViewController.swift in Sources */,
 				2831941727B3D8E500FE58F8 /* Social_App.xcdatamodeld in Sources */,
 				2831944027B3DF2E00FE58F8 /* ProfileViewController.swift in Sources */,
 				2831940F27B3D8E500FE58F8 /* SceneDelegate.swift in Sources */,
 				2831943027B3DDB200FE58F8 /* HomeViewController.swift in Sources */,
+				288934AF27B948CB0003F3E0 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
