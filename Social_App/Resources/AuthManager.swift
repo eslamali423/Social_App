@@ -11,6 +11,10 @@ public class AuthManager {
     
     static let shared = AuthManager()
     
+   
+   
+ 
+    
     public func Registration (username: String, email :String, Password: String, competion : @escaping (Bool) -> Void ){
         DatabaseManager.shared.canCreateNewUser(username: username, email: email) {sucsess in
             if sucsess {
@@ -47,7 +51,10 @@ public class AuthManager {
                 completion(false)
                 return
             }
+        
             // user signed in successfully
+            UserDefaults.standard.set(email as String, forKey: "safeKey")
+            UserDefaults.standard.synchronize()
             completion(true)
         }
         
