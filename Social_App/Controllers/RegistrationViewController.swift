@@ -82,6 +82,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 
                 }
                 print ("done")
+                self.dismiss(animated: true, completion: nil)
             }
             else {
                 print("not done ")

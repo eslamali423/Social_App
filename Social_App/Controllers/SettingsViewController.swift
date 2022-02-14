@@ -79,11 +79,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             }
             let helpsVC = SFSafariViewController(url: url)
             present(helpsVC, animated: true, completion: nil)
-        } else if indexPath.section == 0,indexPath.row == 0 {
+        } else if indexPath.section == 0,indexPath.row == 0 /* EDIT PROFILE */ {
             let editprofileVC = storyboard?.instantiateViewController(identifier: "editProfileID") as! EditProfileViewController
           
             editprofileVC.modalPresentationStyle = .fullScreen
             navigationController?.pushViewController(editprofileVC, animated: true)
+        } else if indexPath.section == 0, indexPath.row == 1{
+           
+            let k = DatabaseManager().generateSafeKey(email:UserDefaults.standard.object(forKey: "safeKey") as! String)
+          
+            print(k)
+
         }
     
         

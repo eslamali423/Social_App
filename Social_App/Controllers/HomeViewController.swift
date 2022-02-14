@@ -11,9 +11,15 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         HandleAuthentcation()
+      
+
        
+        
+        
     }
+    
     
    
   // check if user loged in or not
