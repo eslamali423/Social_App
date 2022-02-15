@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProfileCollectionViewCell
-        cell.image.image = UIImage(systemName: "heart")
+        cell.image.image = UIImage(named: "eslam_img")
         return cell
     }
 
