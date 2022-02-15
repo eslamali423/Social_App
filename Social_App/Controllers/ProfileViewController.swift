@@ -23,16 +23,23 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
 
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: (view.frame.width - 4 ) / 3, height: (view.frame.width - 4 ) / 3)
+        collectionView.collectionViewLayout = layout
 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProfileCollectionViewCell
-        
+        cell.image.image = UIImage(systemName: "heart")
         return cell
     }
 
