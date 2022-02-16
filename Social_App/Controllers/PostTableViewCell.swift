@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PostTableViewCell: UITableViewCell {
 
@@ -37,6 +38,7 @@ class PostTableViewCell: UITableViewCell {
     public func setUpPost ( with model : UserPost ) {
         
         let url = model.thumbnilImage
+        self.thimpnailImage.sd_setImage(with: url, completed: nil)
         
     }
 }

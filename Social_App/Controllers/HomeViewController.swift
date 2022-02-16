@@ -7,20 +7,36 @@
 
 import UIKit
 import FirebaseAuth
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         HandleAuthentcation()
-      
-
        
+        tableView.delegate = self
+        tableView.dataSource = self
         
+        title = "Social App"
+         
         
+       
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        cell.postImage.image = UIImage(named: "eslam_img")
+       
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500
+    }
    
   // check if user loged in or not
     private func HandleAuthentcation () {
@@ -32,14 +48,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction func signout(_ sender: Any) {
-       
-        do {
-            try FirebaseAuth.Auth.auth().signOut()
-        } catch {
-          print("Error signing out: %@")
-        }
-    }
+ 
 }
 
 
