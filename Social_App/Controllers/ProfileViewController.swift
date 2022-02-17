@@ -6,18 +6,26 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
   
     
-    @IBOutlet weak var follwersLabel: UILabel!
+   
     @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var followersLabel: UIStackView!
     @IBOutlet weak var postsLabel: UILabel!
+    @IBOutlet weak var followingsStackView: UIStackView!
+    @IBOutlet weak var followersStackView: UIStackView!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var postsStackView: UIStackView!
     
   //  var userPosts = [UserPost]()
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +41,15 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: (view.frame.width - 4 ) / 3, height: (view.frame.width - 4 ) / 3)
         collectionView.collectionViewLayout = layout
+        
 
     }
     
+    @objc func pressFollowers() {
+        print("followers pressed")
+    }
+    
+    //collectionView 4 functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return userPosts.count
         return 10
@@ -49,6 +63,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
         return cell
     }
     
+    
     // press on Post
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // get the model and open the post Controller
@@ -61,12 +76,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
     }
     
     
-
-    
     // confgure navogation Item
     func  setItemToNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done , target: self, action: #selector(goToSettingsVC))
-        
         
     }
     // setting Button
@@ -75,7 +87,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
       
         settingsVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(settingsVC, animated: true)
-        //present(settingsVC, animated: true, completion: nil)
     }
+    
+    public func setUpUser(model : User){
+    }
+
     
 }

@@ -17,11 +17,11 @@ class PostViewController: UIViewController {
     
     public func setUpPost (model : UserPost)
     {
-//        let thimpnilUrl = model.thumbnilImage
-//        let postImageUrl =  model.postImage
-//        self.thampnilImage.sd_setImage(with: thimpnilUrl, completed: nil)
-//        self.PostImage.sd_setImage(with: postImageUrl, completed: nil)
-        self.PostImage.image = UIImage(named: "eslam_img")
+        let thimpnilUrl = model.thumbnilImage
+        let postImageUrl =  model.postImage
+        self.thampnilImage.sd_setImage(with: thimpnilUrl, completed: nil)
+        self.PostImage.sd_setImage(with: postImageUrl, completed: nil)
+   //     self.PostImage.image = UIImage(named: "eslam_img")
         
     }
     
