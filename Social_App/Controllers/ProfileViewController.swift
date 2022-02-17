@@ -11,11 +11,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
   
     
     @IBOutlet weak var follwersLabel: UILabel!
-    
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var postsLabel: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+  //  var userPosts = [UserPost]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //setting item to navigation bar
@@ -34,22 +37,39 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return userPosts.count
         return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProfileCollectionViewCell
-        cell.image.image = UIImage(named: "eslam_img")
+//        let model = userPosts[indexPath.row]
+//        cell.setUpUserPost(with: model)
+      cell.image.image = UIImage(named: "eslam_img")
         return cell
     }
+    
+    // press on Post
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // get the model and open the post Controller
+//        let model = userPosts[indexPath.row]
+        // we need to pass the model to postViewController (how)
+        let postVC = storyboard?.instantiateViewController(identifier: "postID") as! PostViewController
+     //   postVC.setUpPost(model: model)
+        postVC.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(postVC, animated: true)
+    }
+    
+    
 
     
-    
+    // confgure navogation Item
     func  setItemToNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done , target: self, action: #selector(goToSettingsVC))
         
         
     }
+    // setting Button
     @objc func goToSettingsVC() {
         let settingsVC = storyboard?.instantiateViewController(identifier: "settingVCID") as! SettingsViewController
       

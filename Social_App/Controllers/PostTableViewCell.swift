@@ -16,12 +16,15 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var thimpnailImage: UIImageView!
    
+    private var model : UserPost?
+    
+ 
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
-        
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,7 +38,8 @@ class PostTableViewCell: UITableViewCell {
     @IBAction func commentButton(_ sender: Any) {
     }
     
-    public func setUpPost ( with model : UserPost ) {
+    // Passing UserPost to fill data 
+    public func setUpProfilePicture ( with model : UserPost ) {
         
         let url = model.thumbnilImage
         self.thimpnailImage.sd_setImage(with: url, completed: nil)
