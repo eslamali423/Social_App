@@ -1,4 +1,4 @@
- platform :ios, '9.0'
+ platform :ios, '10.0'
 
 target 'Social_App' do
  
@@ -6,12 +6,12 @@ target 'Social_App' do
 
 pod 'Appirater'
 
+#Image
+pod 'SDWebImage'
 #Firebase
 pod 'Firebase/Core' 
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
-pod 'Firebase/Analytics'
-pod 'Firebase/Crashlytics'
 pod 'Firebase/Storage'
 
 

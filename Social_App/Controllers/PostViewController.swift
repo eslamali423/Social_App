@@ -15,6 +15,9 @@ class PostViewController: UIViewController {
     
     private let model : UserPost? = nil
     
+
+    
+    
     public func setUpPost (model : UserPost)
     {
         let thimpnilUrl = model.thumbnilImage

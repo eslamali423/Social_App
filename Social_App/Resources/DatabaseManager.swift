@@ -26,6 +26,7 @@ public class DatabaseManager {
         database.child(safeKey).setValue(["firstName": firstName, "lastName": lastName, "email": email, "username": username, "following" : 0, "followers" : 0]){ error , _ in
             if error == nil {
                 // Success
+                print("user Iserted in database ......")
                 completion(true)
                 return
             } else {
