@@ -17,8 +17,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        title = "Social App"
+        navigationController?.navigationBar.topItem?.title = "Social App"
+
          
         
        
