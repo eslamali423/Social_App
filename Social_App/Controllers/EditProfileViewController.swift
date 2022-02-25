@@ -9,6 +9,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
+import SDWebImage
 
 
 
@@ -132,12 +133,13 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
             //faild
             return
         }
+        self.dismiss(animated: true, completion: nil)
         // success geting data
         // insert new data in the database
         DatabaseManager.shared.insertNewUser(firstName: firstname, lastName: lastname, email: email, username: username) { (isInserted) in
             if isInserted {
                 print("data updated successfully")
-                self.dismiss(animated: true, completion: nil)
+                
             }else {
                 print("error updating data ")
             }
@@ -147,8 +149,8 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
     }
   
     // upload image to firebase storage func
-    func uploadImageToFirebaseStorage(image : UIImage){
-        
+   public func uploadImageToFirebaseStorage(image : UIImage){
+    
         let safeKey = DatabaseManager().generateSafeKey(email:UserDefaults.standard.object(forKey: "safeKey") as! String)
      
         let storageRef = Storage.storage().reference().child("profileImage").child(safeKey)
@@ -167,11 +169,8 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
                     return
                 }
                 let urlString =  downloadedURL.absoluteString
-             
-
                 
-             
-                
+               
                 UserDefaults.standard.setValue(urlString, forKey: "profileImageURL")
                 print("downloaded URL :::::: \(urlString)")
             }
@@ -198,6 +197,8 @@ extension EditProfileViewController: UIImagePickerControllerDelegate ,UINavigati
            // set image to the image View
             DispatchQueue.main.async {
                 self.profileImage.image = pickedImage
+         //       UserDefaults.standard.setValue(pickedImage, forKey: "image")
+                
             }
             
             
