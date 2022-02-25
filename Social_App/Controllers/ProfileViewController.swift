@@ -42,7 +42,25 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
         layout.itemSize = CGSize(width: (view.frame.width - 4 ) / 3, height: (view.frame.width - 4 ) / 3)
         collectionView.collectionViewLayout = layout
         
-
+       
+        // set profile image form userdefualts
+        
+        guard let urlString = UserDefaults.standard.value(forKey: "profileImageURL") as? String ,
+              let url =  URL(string: urlString ) else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            guard let data =  data , error == nil else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.profilePicture.image = UIImage(data: data)
+            }
+           
+            
+        }
+        task .resume()
     }
     
     @objc func pressFollowers() {

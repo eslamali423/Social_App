@@ -22,31 +22,22 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     
-    var imagePicker : UIImagePickerController!
+    let imagePicker = UIImagePickerController()
+
    
-    let safeKey = DatabaseManager().generateSafeKey(email:UserDefaults.standard.object(forKey: "safeKey") as! String)
+   // get email by userdefualts
+   let safeKey = DatabaseManager().generateSafeKey(email:UserDefaults.standard.object(forKey: "safeKey") as! String)
 
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
         
-        imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing =  true
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        title = "Edit Profile"
-        setItemToNavigationController()
         
-
-        
-       
-        //get the key form USER DEFAULTS
-
         // going to the database to get data
         let emailvalue =  Database.database().reference().child(self.safeKey).child("email")
         emailvalue.observeSingleEvent(of: .value) { snapshot in
             self.emailField.text = snapshot.value as! String
-
+            
         }
         let usernameValue =  Database.database().reference().child(self.safeKey).child("username")
         usernameValue.observeSingleEvent(of: .value) { snapshot in
@@ -63,6 +54,40 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
             self.lastNameField.text = snapshot.value as! String
           
         }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imagePicker.allowsEditing =  true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        title = "Edit Profile"
+        setItemToNavigationController()
+     
+        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
+        profileImage.clipsToBounds =  true
+        
+      
+        
+        guard let urlString = UserDefaults.standard.value(forKey: "profileImageURL") as? String ,
+              let url =  URL(string: urlString ) else {
+            return
+        }
+       let task =  URLSession.shared.dataTask(with: url) { (data, _, error) in
+            guard let data =  data , error == nil else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.profileImage.image = UIImage(data: data)
+            }
+           
+            
+        }
+       
+        task.resume()
    
     }
     
@@ -75,11 +100,10 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
         
         // open camera roll
         actionAlert.addAction(UIAlertAction(title: "Choose From Camera Roll", style: .default, handler: { (handler) in
+           
             self.present(self.imagePicker, animated: true, completion: nil)
-            // uploade image to firebase storage
             
-          //  storageRef.putData(Data, metadata: , completion: <#T##((StorageMetadata?, Error?) -> Void)?##((StorageMetadata?, Error?) -> Void)?##(StorageMetadata?, Error?) -> Void#>)
-            
+        
             
             
         }))
@@ -97,8 +121,7 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveButton))
 
     }
-  
-   
+ 
     
     //save button function
     @objc func saveButton(){
@@ -125,21 +148,32 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
   
     // upload image to firebase storage func
     func uploadImageToFirebaseStorage(image : UIImage){
-        let storageRef = Storage.storage().reference().child("myImage")
-       let data = Data()
         
-        let uploadTask = storageRef.putData(data, metadata: nil) { (metaData, error) in
-            guard let metaData = metaData else {
+        let safeKey = DatabaseManager().generateSafeKey(email:UserDefaults.standard.object(forKey: "safeKey") as! String)
+     
+        let storageRef = Storage.storage().reference().child("profileImage").child(safeKey)
+       
+        guard let imageData = image.pngData() else  { return }
+      
+      storageRef.putData(imageData, metadata: nil) { (_, error) in
+            guard   error == nil else {
                 // something went worng
                 return
             }
-            let size = metaData.size
-            storageRef.downloadURL { (url, error) in
-             
-                guard let downloadedURL = url else {
+           
+             storageRef.downloadURL { (url, error) in
+            
+                guard let downloadedURL = url , error == nil else {
                     return
                 }
-                print("downloaded URL :::::: \(downloadedURL)")
+                let urlString =  downloadedURL.absoluteString
+             
+
+                
+             
+                
+                UserDefaults.standard.setValue(urlString, forKey: "profileImageURL")
+                print("downloaded URL :::::: \(urlString)")
             }
         }
     }
@@ -150,9 +184,6 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
         textField.resignFirstResponder()
     }
 
-    
-
-
 
 extension EditProfileViewController: UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -160,11 +191,14 @@ extension EditProfileViewController: UIImagePickerControllerDelegate ,UINavigati
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let  pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            self.profileImage.image = pickedImage
+          
+        
             // upload image to firebase
             uploadImageToFirebaseStorage(image: pickedImage)
-            
-
+           // set image to the image View
+            DispatchQueue.main.async {
+                self.profileImage.image = pickedImage
+            }
             
             
         }

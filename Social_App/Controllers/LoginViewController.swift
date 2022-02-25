@@ -45,6 +45,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                     //to dismiss login view controller and move to home
                     self.dismiss(animated: false, completion:nil )
                     
+                    
                 }else {
                     //user Not signed in
                     print ("you are NOT loged in ")
