@@ -35,6 +35,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        profilePicture.layer.cornerRadius = profilePicture.frame.size.height / 2
+        
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
@@ -56,10 +58,15 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate,UICollec
             
             DispatchQueue.main.async {
                 self.profilePicture.image = UIImage(data: data)
+                guard  let urlString  = UserDefaults.standard.value(forKey: "profileImageURL") as? URL else {
+                return
+                }
+                
+                }
             }
            
             
-        }
+        
         task .resume()
     }
     

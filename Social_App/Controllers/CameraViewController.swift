@@ -12,18 +12,33 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func didTapAdd () {
+    
+    // open camera
+    let actionAlert =  UIAlertController(title: "change Profile Picture", message: "", preferredStyle: .actionSheet)
+    actionAlert.addAction(UIAlertAction(title: "Open Camera", style: .default, handler: { (handler) in
+    
+    }))
+    
+    // open camera roll
+    actionAlert.addAction(UIAlertAction(title: "Choose From Camera Roll", style: .default, handler: { (handler) in
+       
+        
+    
+        
+        
+    }))
+    // to cancel
+    actionAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (handler) in
+       return
+    }))
+    
+    self.present(actionAlert, animated: true, completion: nil)
+    
     }
-    */
 
 }
