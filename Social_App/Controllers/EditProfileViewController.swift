@@ -61,6 +61,8 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         imagePicker.allowsEditing =  true
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
@@ -133,7 +135,7 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
             //faild
             return
         }
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
         // success geting data
         // insert new data in the database
         DatabaseManager.shared.insertNewUser(firstName: firstname, lastName: lastname, email: email, username: username) { (isInserted) in
@@ -202,7 +204,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate ,UINavigati
             }
             
             
-        }
+        }	
         picker.dismiss(animated: true, completion: nil)
 
     }

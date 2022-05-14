@@ -27,6 +27,11 @@ class PostTableViewCell: UITableViewCell {
        
     }
 
+    
+    public func configure() {
+        // configire the cell 
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

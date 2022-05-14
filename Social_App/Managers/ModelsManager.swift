@@ -29,6 +29,7 @@ public struct User {
     let bio : String
     let name : (firstName :  String, lastName :  String)
     let counts : [UserCounts]
+    
 }
 
 

@@ -16,12 +16,8 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
 // to set navigartion controller item without set title for the tabBar item
         navigationController?.navigationBar.topItem?.title = "Notification"
-/*
-        -this code set title for the navigation controller and the tabBar item
-        i don't know why :)
-       // title = "Notification"
-      //  tabBarItem.title = " "  // NOT WORKING
-*/
+
+
         tableView.delegate = self
         tableView.dataSource = self
         

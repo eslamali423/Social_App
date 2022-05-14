@@ -13,10 +13,16 @@ public class ProfileCollectionViewCell: UICollectionViewCell {
     
     private var model = [UserPost]()
  
-    public func setUpUserPost(with model :  UserPost){
-        let url = model.postImage
+    public func configuire(with model :  UserPost){
+        let url = model.thumbnilImage
         self.image.sd_setImage(with: url, completed: nil)
       //  self.image.image =  UIImage(named: "eslam_img")
+    }
+    
+    public func configuire(with imageName :  String){
+        image.image = UIImage(named: imageName)
+    
+    
     }
     
 }

@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         tabelView.delegate = self
         tabelView.dataSource = self
+        tabelView.tableFooterView = UIView()
         title = "Settings"
 
         //set title for the settings
@@ -60,6 +61,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }))
+            actionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil ))
         present(actionAlert, animated: true, completion: nil)
         } else if indexPath.section == 1,indexPath.row == 0 /* TERMS OF SERVICE */ {
             guard let url = URL(string: "https://help.instagram.com/581066165581870") else {

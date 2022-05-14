@@ -13,9 +13,14 @@ public class StorageManager {
    static let shared  =  StorageManager()
     let bucket  =  Storage.storage().reference()
 
-    public func uploadImage (){
+    
+    //MARK:- Upload Image To Firestorage
+   public func uploadImage (model:  UserPost, completion: (Result<URL, Error>)->Void ){
         
     }
+    
+    
+    //MARK: Download image form firestorage
     public func downloadImage (with referance : String, completion: @escaping (Result<URL,storageManagerError>)->Void){
         bucket.child(referance).downloadURL { (url, error) in
             guard let url = url , error == nil else {
@@ -35,3 +40,5 @@ public class StorageManager {
     }
     
 }
+
+ 
